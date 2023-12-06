@@ -5,12 +5,12 @@ public class Product {
     private int code;
     private String name;
     private String description;
-    private int price;
-    private int iva
+    private Double price;
+    private int iva;
 
     // COSTRUTTORI
 
-    public Product(int code, String name, String description, int price, int iva) {
+    public Product(int code, String name, String description, Double price, int iva) {
         this.code = code;
         this.name = name;
         this.description = description;
@@ -32,7 +32,7 @@ public class Product {
     public int getIva() {
         return iva;
     }
-    public int getPrice() {
+    public Double getPrice() {
         return price;
     }
 
@@ -47,7 +47,7 @@ public class Product {
     public void setIva(int iva) {
         this.iva = iva;
     }
-    public void setPrice(int price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -58,6 +58,8 @@ public class Product {
         return code + " " + name;
     }
 
-    //metodo per ottenere prezzo con e senza iva
-
+    //metodo per ottenere prezzo con iva
+    public Double getFinalPrice() {
+        return price + (price * iva/100);
+    }
 }
