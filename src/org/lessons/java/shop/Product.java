@@ -10,11 +10,14 @@ public class Product {
 
     // COSTRUTTORI
 
-    public Product(int code, String name, String description, Double price, int iva) {
+    public Product(int code, String name, String description, Double price, int iva) throws Exception {
         this.code = code;
+        checkName(name);
         this.name = name;
         this.description = description;
+        checkIva(iva);
         this.iva = iva;
+        checkPrice(price);
         this.price = price;
     }
 
@@ -61,5 +64,24 @@ public class Product {
     //metodo per ottenere prezzo con iva
     public Double getFinalPrice() {
         return price + (price * iva/100);
+    }
+
+    //metodi per controllare dati negativi
+
+    // metodo 1 prezzo
+    private void checkPrice (Double price) throws Exception {
+        if (price < 0 ) {
+            throw new Exception("Prezzo non valido");
+        }
+    }
+    private void checkIva (int iva) throws Exception {
+        if (iva < 0) {
+            throw new Exception("Iva non valida");
+        }
+    }
+    private void checkName (String name) throws Exception {
+        if (name.isEmpty()) {
+            throw new Exception("Inserisci il nome");
+        }
     }
 }
