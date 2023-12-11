@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbbcd432-446b-428c-a91a-55123e125586" name="Changes" comment="exercise base">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/lessons/java/shop/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/lessons/java/shop/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/lessons/java/shop/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/lessons/java/shop/Product.java" afterDir="false" />
+    <list default="true" id="dbbcd432-446b-428c-a91a-55123e125586" name="Changes" comment="metà esercizio finito">
+      <change afterPath="$PROJECT_DIR$/src/org/lessons/java/shop/Carrello.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/lessons/java/shop/Cuffie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/lessons/java/shop/Smartphone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/lessons/java/shop/Televisori.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +40,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Alfredo/Desktop/Esercizi coding/esercizi Java/java-oop-shop"
+    "last_opened_file_path": "C:/Users/Alfredo/Desktop/Esercizi coding/esercizi Java/java-wish-list"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -75,7 +76,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702251396189</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="metà esercizio finito">
+      <option name="closed" value="true" />
+      <created>1702312391130</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1702312391130</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -93,6 +102,7 @@
     <MESSAGE value="prova di push" />
     <MESSAGE value="exercise base done" />
     <MESSAGE value="exercise base" />
-    <option name="LAST_COMMIT_MESSAGE" value="exercise base" />
+    <MESSAGE value="metà esercizio finito" />
+    <option name="LAST_COMMIT_MESSAGE" value="metà esercizio finito" />
   </component>
 </project>

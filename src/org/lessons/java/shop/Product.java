@@ -96,4 +96,15 @@ public class Product {
             throw new Exception("Inserisci il nome");
         }
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "code=" + code +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", iva=" + iva +
+                '}';
+    }
 }
