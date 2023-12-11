@@ -1,17 +1,23 @@
 package org.lessons.java.shop;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.Random;
+
 public class Product {
     // ATTRIBUTI
     private int code;
     private String name;
     private String description;
-    private Double price;
-    private int iva;
+    private BigDecimal price;
+    private BigDecimal iva;
 
     // COSTRUTTORI
-
-    public Product(int code, String name, String description, Double price, int iva) throws Exception {
-        this.code = code;
+    public Product(){
+        this.code = generateCode();
+    }
+    public Product( String name, String description, BigDecimal price, BigDecimal iva) throws Exception {
+        this.code = generateCode();
         checkName(name);
         this.name = name;
         this.description = description;
@@ -32,10 +38,10 @@ public class Product {
     public String getDescription() {
         return description;
     }
-    public int getIva() {
+    public BigDecimal getIva() {
         return iva;
     }
-    public Double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
@@ -47,36 +53,42 @@ public class Product {
     public void setDescription(String description) {
         this.description = description;
     }
-    public void setIva(int iva) {
+    public void setIva(BigDecimal iva) {
         this.iva = iva;
     }
-    public void setPrice(Double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
     // METODI
 
+    // metodo per creare un codice random
+    private int generateCode(){
+        Random randomGenerator = new Random();
+        return randomGenerator.nextInt(0, 10000);
+    }
     //metodo per ottenere nome esteso
     public String getFullProductName() {
         return code + " " + name;
     }
 
     //metodo per ottenere prezzo con iva
-    public Double getFinalPrice() {
-        return price + (price * iva/100);
+    public BigDecimal getFinalPrice() {
+        BigDecimal ivaOnPrice = price.multiply(iva);
+        return price.add(ivaOnPrice).setScale(2, RoundingMode.HALF_EVEN);
     }
 
     //metodi per controllare dati negativi
 
     // metodo 1 prezzo
-    private void checkPrice (Double price) throws Exception {
-        if (price < 0 ) {
-            throw new Exception("Prezzo non valido");
+    private void checkPrice (BigDecimal price) throws IllegalArgumentException {
+        if(price == null || price.compareTo(new BigDecimal(0)) < 0) {
+            throw new IllegalArgumentException("price negative " + price);
         }
     }
-    private void checkIva (int iva) throws Exception {
-        if (iva < 0) {
-            throw new Exception("Iva non valida");
+    private void checkIva (BigDecimal iva) throws IllegalArgumentException {
+        if(iva == null || iva.compareTo(new BigDecimal(0))< 0){
+            throw new IllegalArgumentException("vat negative " + iva);
         }
     }
     private void checkName (String name) throws Exception {
